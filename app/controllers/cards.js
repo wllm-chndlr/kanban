@@ -8,6 +8,10 @@ export default Controller.extend({
             });
 
             card.save();
+        },
+        updateCard(list, card) {
+            card.set('list', list);
+            card.save();
         }
     }
 });
