@@ -1,0 +1,16 @@
+<div class="board">
+    {{#each-in (group-by "list" model) as |list cards|}}
+        <ui class="list">
+            <li class="list-header">
+                {{list}}
+            </li>
+            {{#each cards as |card|}}
+            <li class="card">
+                <a href>{{card.title}}</a>
+            </li>
+            {{/each}}
+        </ui>
+    {{/each-in}}
+
+    {{new-list-form class="list-form" onsubmit=(action "saveCard")}}
+</div>
