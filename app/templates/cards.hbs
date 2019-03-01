@@ -6,7 +6,7 @@
             </li>
             {{#each cards as |card|}}
                 {{#draggable-object class="card" tagName="li" content=card}}
-                    <a href>{{card.title}}</a>
+                   {{#link-to "cards.detail" card.id}}{{card.title}}{{/link-to}}
                 {{/draggable-object}}
             {{/each}}
 
@@ -16,3 +16,5 @@
 
     {{new-list-form class="list-form" onsubmit=(action "saveCard")}}
 </div>
+
+{{outlet}}
